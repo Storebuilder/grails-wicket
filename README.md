@@ -16,6 +16,7 @@ But the wicket plugin in subversion uses wicket 1.4.9 and this project upgrades 
 Until that happens you can manually install the plugin and play around.
 
 Commit upgrading to wicket 1.5.2: https://github.com/narenlog/grails-wicket/commit/0e253fd6a9d25c5648cccab276217e884d7e77b7
+<br>
 SVN : http://svn.codehaus.org/grails-plugins/grails-wicket/trunk/
 
 
