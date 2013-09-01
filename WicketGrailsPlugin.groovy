@@ -2,7 +2,7 @@ import org.apache.wicket.Application
 import org.codehaus.groovy.grails.commons.ConfigurationHolder
 
 class WicketGrailsPlugin {
-    def version = '1.4.9'
+    def version = '1.5.2'
     def author = "Narender Loganathan. previously : Lee Butts & Graeme Rocher"
     def title = "Provides integration between Grails and the Wicket framework"
     def description = """
@@ -39,22 +39,28 @@ component oriented framework that, like Grails, embraces convention-over-configu
     def doWithWebDescriptor = { xml ->
         def servlets = xml.servlet[0]
 
-        servlets + {
-            servlet {
-                'servlet-name'('wicket')
-                'servlet-class'('org.apache.wicket.protocol.http.WicketServlet')
+        def filters = xml.filter[0]
+
+        filters + {
+            filter {
+                'filter-name'('wicket')
+                'filter-class'('org.apache.wicket.protocol.http.WicketFilter')
                 'init-param' {
                     'param-name'('applicationFactoryClassName')
                     'param-value'('org.apache.wicket.spring.SpringWebApplicationFactory')
+                }
+                'init-param' {
+                    'param-name'('filterMappingUrlPattern')
+                    'param-value'('/app/*')
                 }
                 'load-on-startup'(1)
             }
         }
 
-        def mappings = xml.'servlet-mapping'[0]
+        def mappings = xml.'filter-mapping'[0]
         mappings + {
-            'servlet-mapping' {
-                'servlet-name'('wicket')
+            'filter-mapping' {
+                'filter-name'('wicket')
                 'url-pattern'(ConfigurationHolder.config.grails.wicket.urlPattern ?: '/app/*')
             }
         }
