@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module relativePaths="true" type="JAVA_MODULE" version="4">
+  <component name="FacetManager">
+    <facet type="Grails" name="Grails">
+      <configuration />
+    </facet>
+  </component>
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/..">
+      <sourceFolder url="file://$MODULE_DIR$/controllers" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../src/groovy" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../src/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../test/integration" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../test/unit" isTestSource="true" />
+    </content>
+    <orderEntry type="library" name="GRAILS" level="application" />
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library">
+      <library name="Apache Wicket 1.3">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../lib/wicket-spring-1.3.1.jar!/" />
+          <root url="jar://$MODULE_DIR$/../lib/wicket-extensions-1.3.1.jar!/" />
+          <root url="jar://$MODULE_DIR$/../lib/wicket-1.3.1.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/../../../../apache-wicket-1.3.1/src/jdk-1.4/wicket/src/main/java" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntryProperties />
+  </component>
+</module>
+
