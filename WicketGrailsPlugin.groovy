@@ -39,12 +39,36 @@ component oriented framework that, like Grails, embraces convention-over-configu
     def doWithWebDescriptor = { xml ->
         def servlets = xml.servlet[0]
 
+
+        /*
+           TIP: If you want to change the URL pattern from  "/app/*" you need to change in 2 places below.
+           Once in "filterMappingUrlPattern"
+           And also in the filter-mapping for "wicket" filter
+
+           Helpful resources:
+           1. 'param-name'('applicationClassName')
+                See web.xml section. http://wicket.apache.org/learn/examples/helloworld.html
+                Note: WicketApplication class refers to file in Configuration inside the app where this plugin is installed not the one in this plugin itself.
+           2. 'param-name'('applicationFactoryClassName')
+                For tip on adding SpringWebApplicationFactory if using @SpringBean
+                https://cwiki.apache.org/confluence/display/WICKET/SpringBean+outside+Wicket
+                P.S: info from official api docs was confusing & did not work : http://wicket.apache.org/apidocs/1.5/org/apache/wicket/spring/SpringWebApplicationFactory.html
+           3.  'param-name'('filterMappingUrlPattern')
+                Helped crack the below error : http://stackoverflow.com/questions/5494395/how-to-use-guice-servlet-with-wicket
+                     java.lang.IllegalStateException: filter path was not configured
+	                    at org.apache.wicket.protocol.http.WicketFilter.processRequest(WicketFilter.java:141)
+
+         */
         def filters = xml.filter[0]
 
         filters + {
             filter {
                 'filter-name'('wicket')
                 'filter-class'('org.apache.wicket.protocol.http.WicketFilter')
+                'init-param' {
+                    'param-name'('applicationClassName')
+                    'param-value'('WicketApplication')
+                }
                 'init-param' {
                     'param-name'('applicationFactoryClassName')
                     'param-value'('org.apache.wicket.spring.SpringWebApplicationFactory')
@@ -53,7 +77,6 @@ component oriented framework that, like Grails, embraces convention-over-configu
                     'param-name'('filterMappingUrlPattern')
                     'param-value'('/app/*')
                 }
-                'load-on-startup'(1)
             }
         }
 
