@@ -4,6 +4,21 @@ grails-wicket (BETA)
 Wicket plugin for Grails Framework. If you want to use the Wicket framework as an alternative view rendering technology on top of GORM then this plug-in is for you
 
 
+**IMPORTANT:**
+--------------
+Changed the URL pattern for accessing wicket from "/app" to "/"
+
+BEFORE: http://localhost:8080/MyNiceApp/app
+
+NOW: http://localhost:8080/MyNiceApp
+
+Implication: This means you cannot access the "Grails Views" anymore. Wicket is the default UI with this change.
+
+You can change this obviously by reverting this change in your copy of the grails-wicket plugin code.
+Just revert the changes in this commit:
+https://github.com/narenlog/grails-wicket/commit/35651c0508aa9dcee703a22d57f08c3f57eef051
+
+
 **Note:**
 
 Normally you would install the wicket plugin as 
