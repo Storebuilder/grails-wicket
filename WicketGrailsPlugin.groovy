@@ -75,7 +75,7 @@ component oriented framework that, like Grails, embraces convention-over-configu
                 }
                 'init-param' {
                     'param-name'('filterMappingUrlPattern')
-                    'param-value'('/app/*')
+                    'param-value'('/*')
                 }
             }
         }
@@ -84,7 +84,7 @@ component oriented framework that, like Grails, embraces convention-over-configu
         mappings + {
             'filter-mapping' {
                 'filter-name'('wicket')
-                'url-pattern'(ConfigurationHolder.config.grails.wicket.urlPattern ?: '/app/*')
+                'url-pattern'(ConfigurationHolder.config.grails.wicket.urlPattern ?: '/*')
             }
         }
     }
