@@ -19,7 +19,8 @@ Just revert the changes in this commit:
 https://github.com/narenlog/grails-wicket/commit/35651c0508aa9dcee703a22d57f08c3f57eef051
 
 
-**Note:**
+**BACKGROUND:**
+--------------
 
 Normally you would install the wicket plugin as 
 ```
