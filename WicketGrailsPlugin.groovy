@@ -38,8 +38,8 @@ component oriented framework that, like Grails, embraces convention-over-configu
 
 
             /*
-                To make Wicket plugin adhere default Grails View behavior of looking for view html files inside installed plugins as well.
-                NOTE: Might slow down startup in local development mode.
+                 To make Wicket plugin adhere default Grails View behavior of looking for view html files inside installed plugins as well.
+                 NOTE: Might slow down startup in local development mode.
                     Excerpt from https://grails.github.io/grails-doc/1.3.7/guide/single.html#12.4 Providing Basic Artefacts
                         For example given a AmazonGrailsPlugin plug-n provided controller called BookController if the action being executed is list, Grails will first look for a view called grails-app/views/book/list.gsp then if that fails will look for the same view relative to the plug-in.
             */
