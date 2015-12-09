@@ -1,5 +1,7 @@
 import org.apache.wicket.Application
 import org.codehaus.groovy.grails.commons.ConfigurationHolder
+import grails.util.BuildSettings
+import org.codehaus.groovy.grails.plugins.GrailsPluginUtils
 
 class WicketGrailsPlugin {
     def version = '1.5.2'
@@ -33,6 +35,22 @@ component oriented framework that, like Grails, embraces convention-over-configu
             URL pagesDir = new File("./grails-app/pages").toURL()
             rootLoader.addURL(viewsDir)
             rootLoader.addURL(pagesDir)
+
+
+            /*
+                To make Wicket plugin adhere default Grails View behavior of looking for view html files inside installed plugins as well.
+                NOTE: Might slow down startup in local development mode.
+                    Excerpt from https://grails.github.io/grails-doc/1.3.7/guide/single.html#12.4 Providing Basic Artefacts
+                        For example given a AmazonGrailsPlugin plug-n provided controller called BookController if the action being executed is list, Grails will first look for a view called grails-app/views/book/list.gsp then if that fails will look for the same view relative to the plug-in.
+            */
+            GrailsPluginUtils.pluginInfos.each{  installedPlugin  ->
+                URL pluginPagesDir = new URL(installedPlugin.pluginDir.getURL(),"grails-app/pages/")  //NOTE: Add trailing "/" since we are constructing relative URL using URL(url, relativeURLString) instead of using File().toURL() which appends a trailing "/"
+                rootLoader.addURL(pluginPagesDir)
+                URL pluginViewsDir = new URL(installedPlugin.pluginDir.getURL(),"grails-app/views/") //NOTE: Add trailing "/" since we are constructing relative URL using URL(url, relativeURLString) instead of using File().toURL() which appends a trailing "/"
+                rootLoader.addURL(pluginViewsDir)
+            }
+
+
         }
     }
 
