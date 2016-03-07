@@ -21,7 +21,7 @@ grails.project.dependency.resolution = {
     }
 
     dependencies {
-        compile('org.apache.wicket:wicket:1.5.2') {
+        compile('org.apache.wicket:wicket-core:1.5.2') {
             excludes('junit')
             excludes('log4j')
     }
