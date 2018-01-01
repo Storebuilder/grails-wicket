@@ -4,7 +4,7 @@ import grails.util.BuildSettings
 import org.codehaus.groovy.grails.plugins.GrailsPluginUtils
 
 class WicketGrailsPlugin {
-    def version = '1.5.2'
+    def version = '6.28.0'
     def author = "Narender Loganathan. previously : Lee Butts & Graeme Rocher"
     def title = "Provides integration between Grails and the Wicket framework"
     def description = """
