@@ -30,14 +30,22 @@ grails.project.dependency.resolution = {
     }
 
     dependencies {
+        compile('org.apache.wicket:wicket:6.28.0') {
+            excludes('junit')
+            excludes('log4j')
+        }
         compile('org.apache.wicket:wicket-core:6.28.0') {
             excludes('junit')
             excludes('log4j')
-    }
+        }
         compile('org.apache.wicket:wicket-extensions:6.28.0') {
             excludes('junit')
             excludes('log4j')
-}
+        }
+        compile('org.apache.wicket:wicket-datetime:6.28.0') {
+            excludes('junit')
+            excludes('log4j')
+        }
         compile('org.apache.wicket:wicket-ioc:6.28.0') {
             excludes('junit')
             excludes('log4j')
