@@ -55,5 +55,8 @@ grails.project.dependency.resolution = {
             excludes('junit')
             excludes('log4j')
         }
+        compile('org.wicketstuff:wicketstuff-flot:6.28.0'){
+            
+        }
     }
 }
