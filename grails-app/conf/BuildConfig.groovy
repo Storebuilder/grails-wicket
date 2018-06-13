@@ -58,5 +58,11 @@ grails.project.dependency.resolution = {
         compile('org.wicketstuff:wicketstuff-flot:6.28.0'){
             
         }
+        compile('org.wicketstuff:wicketstuff-restannotations:6.28.0'){
+
+        }
+        compile('org.wicketstuff:wicketstuff-restannotations-json:6.28.0'){
+
+        }
     }
 }
