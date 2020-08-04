@@ -1,10 +1,11 @@
 import org.apache.wicket.Application
-import org.codehaus.groovy.grails.commons.ConfigurationHolder
+//import org.codehaus.groovy.grails.commons.ConfigurationHolder
 import grails.util.BuildSettings
 import org.codehaus.groovy.grails.plugins.GrailsPluginUtils
 
 class WicketGrailsPlugin {
-    def version = '6.28.0'
+    def grailsApplication
+    def version = '6.28.2'
     def author = "Narender Loganathan. previously : Lee Butts & Graeme Rocher"
     def title = "Provides integration between Grails and the Wicket framework"
     def description = """
@@ -19,7 +20,7 @@ component oriented framework that, like Grails, embraces convention-over-configu
             "file:./grails-app/pages/**/*.xml",
             "file:./grails-app/conf/WicketApplication.groovy"]
 
-    def grailsVersion = "1.3 > *"
+    def grailsVersion = "2.2 > *"
 
     def doWithSpring = {
 
@@ -102,7 +103,7 @@ component oriented framework that, like Grails, embraces convention-over-configu
         mappings + {
             'filter-mapping' {
                 'filter-name'('wicket')
-                'url-pattern'(ConfigurationHolder.config.grails.wicket.urlPattern ?: '/*')
+                'url-pattern'(application.config.grails.wicket.urlPattern ?: '/*')
             }
         }
     }
