@@ -20,7 +20,7 @@ component oriented framework that, like Grails, embraces convention-over-configu
             "file:./grails-app/pages/**/*.xml",
             "file:./grails-app/conf/WicketApplication.groovy"]
 
-    def grailsVersion = "2.2 > *"
+    def grailsVersion = "2.3 > *"
 
     def doWithSpring = {
 
