@@ -11,17 +11,20 @@ grails.project.dependency.resolution = {
     log "warn" // log level of Ivy resolver, either 'error', 'warn', 'info', 'debug' or 'verbose'
     repositories {
        
-        //To download publicly published plugins & grails libs
-        mavenRepo "http://repo.grails.org/grails/core"
-        mavenRepo "http://repo.grails.org/grails/plugins"
+         //To download publicly published plugins & grails libs
+        mavenRepo "https://repo.grails.org/artifactory/core/"
+        mavenRepo "https://repo.grails.org/artifactory/plugins/"
+
+        //mavenRepo "http://repo.grails.org/grails/core"
+        //mavenRepo "http://repo.grails.org/grails/plugins"
         //grailsPlugins()
         //grailsHome()
-        grailsCentral()
+        //grailsCentral()
 
         // uncomment the below to enable remote dependency resolution
         // from public Maven repositories
         //mavenLocal()
-        mavenCentral()
+        //mavenCentral()
         //mavenRepo "http://wicketstuff.org/maven/repository"
         //mavenRepo "http://download.java.net/maven/1"
         //mavenRepo "http://download.java.net/maven/2"
