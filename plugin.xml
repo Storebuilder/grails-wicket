@@ -1,4 +1,4 @@
-<plugin name='wicket' version='6.28.0' grailsVersion='1.3 &gt; *'>
+<plugin name='wicket' version='6.28.2' grailsVersion='2.2.5 &gt; *'>
   <author>Narender Loganathan. previously : Lee Butts &amp; Graeme Rocher</author>
   <title>Provides integration between Grails and the Wicket framework</title>
   <description>
@@ -6,10 +6,29 @@ A plug-in that makes Wicket (http://wicket.sourceforge.net/) the default view re
 component oriented framework that, like Grails, embraces convention-over-configuration approaches.
 	</description>
   <documentation>http://grails.org/plugin/wicket</documentation>
-  <resources>
-    <resource>BuildConfig</resource>
-    <resource>UrlMappings</resource>
-  </resources>
-  <dependencies />
+  <type>WicketGrailsPlugin</type>
+  <resources />
+  <repositories>
+    <repository name='https://repo1.maven.org/maven2' url='https://repo1.maven.org/maven2/' />
+    <repository name='https://repo.grails.org/grails/core' url='https://repo.grails.org/grails/core/' />
+    <repository name='https://repo.grails.org/grails/plugins' url='https://repo.grails.org/grails/plugins/' />
+    <repository name='grailsCentral' url='http://grails.org/plugins' />
+    <repository name='mavenCentral' url='http://repo1.maven.org/maven2/' />
+  </repositories>
+  <dependencies>
+    <compile>
+      <dependency group='org.apache.wicket' name='wicket-datetime' version='6.28.0' />
+      <dependency group='org.wicketstuff' name='wicketstuff-flot' version='6.28.0' />
+      <dependency group='org.apache.wicket' name='wicket-ioc' version='6.28.0' />
+      <dependency group='org.objenesis' name='objenesis' version='1.4' />
+      <dependency group='org.wicketstuff' name='wicketstuff-restannotations-json' version='6.28.0' />
+      <dependency group='org.wicketstuff' name='wicketstuff-restannotations' version='6.28.0' />
+      <dependency group='org.apache.wicket' name='wicket-spring' version='6.28.0' />
+      <dependency group='org.apache.wicket' name='wicket-core' version='6.28.0' />
+      <dependency group='org.apache.wicket' name='wicket-extensions' version='6.28.0' />
+    </compile>
+  </dependencies>
+  <plugins />
+  <runtimePluginRequirements />
   <behavior />
 </plugin>

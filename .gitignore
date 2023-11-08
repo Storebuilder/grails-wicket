@@ -1,0 +1,9 @@
+target/
+work/
+*.iws
+*.ipr
+*.iml
+.idea
+
+# git merge files
+*.orig

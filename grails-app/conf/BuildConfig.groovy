@@ -24,8 +24,8 @@ grails.project.dependency.resolution = {
         mavenLocal()
         //mavenCentral() // need to comment this to use https for mavenRepo
         mavenRepo "https://repo1.maven.org/maven2"
-        mavenRepo "http://repo.grails.org/grails/core"
-        mavenRepo "http://repo.grails.org/grails/plugins"
+        mavenRepo "https://repo.grails.org/grails/core"
+        mavenRepo "https://repo.grails.org/grails/plugins"
         //mavenRepo "http://wicketstuff.org/maven/repository"
         //mavenRepo "http://download.java.net/maven/1"
         //mavenRepo "http://download.java.net/maven/2"
@@ -78,7 +78,7 @@ grails.project.dependency.resolution = {
     }
 
     plugins {
-        build(":release:3.0.1",
+        build(":release:2.2.1",
                 ":rest-client-builder:1.0.3") {
             export = false
         }
